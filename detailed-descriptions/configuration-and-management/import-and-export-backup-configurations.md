@@ -33,3 +33,44 @@ The option to "Import metadata" will create the new backup configuration and res
 If the option "Save immediately" is checked, the backup will be created when clicking import, skipping the option to edit the backup configuration.
 
 When all is configured as desired, click the "Import" button. If you have not checked "Save immediately", the flow will look like it does when [setting up the initial backup](../../getting-started/set-up-a-backup-in-the-ui.md).
+
+If the backup was created with the [store-task-config](#storing-configuration-with-the-backup) option enabled, you can also retrieve the configuration directly from the backup destination when restoring or setting up a new machine.
+
+## Storing configuration with the backup
+
+Duplicati can automatically store backup configurations together with the backup data. This makes it easier to recreate a backup job when restoring on a new machine or after losing the local Duplicati database.
+
+{% hint style="info" %}
+Avaliable from Canary 2.3.0.104
+{% endhint %}
+
+The behavior is controlled by the `--store-task-config` advanced option, which supports the following modes:
+
+| Mode                         | Description                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Auto` (default)             | For encrypted backups, behaves as `Self`. For unencrypted backups, behaves as `None`.                                                                  |
+| `None`                       | No configuration is stored with the backup.                                                                                                            |
+| `Self`                       | Stores the current backup configuration with all secrets unconditionally removed.                                                                      |
+| `All`                        | Stores the configurations of **all** backups defined in Duplicati, with all secrets unconditionally removed.                                           |
+| `SelfWithSecrets`            | Stores the current backup configuration with all secrets included. If the backup is not encrypted, Duplicati logs a warning and reverts to `Self`.     |
+| `AllWithSecrets`             | Stores the configurations of **all** backups with all secrets included. If the backup is not encrypted, Duplicati logs a warning and reverts to `All`. |
+| `SelfWithUnencryptedSecrets` | Stores the current backup configuration with all secrets included, even if the backup is not encrypted.                                                |
+| `AllWithUnencryptedSecrets`  | Stores the configurations of **all** backups with all secrets included, even if the backup is not encrypted.                                           |
+
+When a configuration is stored with the backup, it is saved as a control file named `task-setup.json` and uploaded alongside the backup data. You can later retrieve and import these stored configurations through the Duplicati user interface when connecting to the backup destination.
+
+For backwards compatibility, the option also accepts boolean values: `true` is treated as `Self`, and `false` is treated as `None`.
+
+### Security considerations
+
+Storing backup configurations in the remote backup introduces security risks that should be carefully evaluated before changing the default settings.
+
+**Leaked secrets:** Backup configurations can contain sensitive data such as destination credentials, encryption passphrases, API keys, SMTP credentials for notifications, and paths to remote sources. If these secrets are included in a stored configuration, anyone who gains access to the backup data can extract them. Even if secrets are removed, the configuration may still reveal server names, paths, and other infrastructure details that aid an attacker.
+
+**Cross-contamination between backups:** If you use the `All`, `AllWithSecrets`, or `AllWithUnencryptedSecrets` mode, a single compromised backup destination can expose the complete set of backup configurations. An attacker who obtains access to one backup can extract the credentials for every other backup destination, notification service, and remote source configured in Duplicati. This cross-contamination means that one leak can cascade into a compromise of multiple systems.
+
+**Additional targets and remote sources:** A backup configuration can reference additional storage targets, secondary destinations, SMTP servers for notifications, and remote sources. When secrets are included in the stored configuration—such as with `SelfWithSecrets` or any of the unencrypted-secrets modes—a single leaked backup can provide an attacker with credentials to access these connected systems. This means compromising one backup destination could allow an attacker to disable secondary targets, read notification credentials, or access remote source locations.
+
+**Default protection:** The default `Auto` mode is designed to minimize these risks. When the backup is encrypted, it stores only the current job's configuration and unconditionally strips all secrets (`Self`). When the backup is unencrypted, it stores nothing (`None`). This default ensures that a leaked backup does not contain credentials that can be used to access other systems.
+
+If you choose to override the defaults—especially by using `All`, `AllWithSecrets`, `AllWithUnencryptedSecrets`, `SelfWithUnencryptedSecrets`, or any mode that includes secrets in an unencrypted backup, ensure that the backup destination is strongly protected and that you fully understand the risk of cross-contamination across all your backups, sources, and notification services.
