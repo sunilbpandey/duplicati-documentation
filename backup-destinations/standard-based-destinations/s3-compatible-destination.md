@@ -16,7 +16,7 @@ For AWS S3, and most other providers, the bucket name is a global name, shared a
 
 ## User interface
 
-<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.38 (1).png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.26 (1).png" alt="The S3 Backend Configuration view"></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.38.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.26.png" alt="The S3 Backend Configuration view"></picture><figcaption></figcaption></figure>
 
 To use the S3 backend you must fill in details for all the fields: bucket, folder path, server, AWS Access Key ID, and AWS Secret Access Key. Not that your provider may use different names for the different values, especially the Access Key Id and Secret Access Key may be called something like username and password.
 
@@ -54,7 +54,7 @@ Most providers other than AWS S3 use an older version of the protocol, so to con
 
 Since the bucket defines the place where data is stored, a bucket needs to be created before it can be used. All providers will offer a way to do this through their UI, and allows you to set various options, such as which geographical region the bucket is located in.
 
-If you use Duplicati to create the bucket, you can also set the option `--s3-location-contraint`to provide the desired location. Support for this, and available regions, depends on the provider.&#x20;
+If you use Duplicati to create the bucket, you can also set the option `--s3-location-contraint`to provide the desired location. Support for this, and available regions, depends on the provider.
 
 ## Storage class
 

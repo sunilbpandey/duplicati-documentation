@@ -19,7 +19,7 @@ SSO is an additional Enterprise feature. Contact Duplicati sales or support if y
 3. In the left menu, select **Applications**.
 
 {% hint style="info" %}
-Ensure you have an Okta account available with **super admin rights**.&#x20;
+Ensure you have an Okta account available with **super admin rights**.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/image11.png" alt=""><figcaption></figcaption></figure>
@@ -88,7 +88,7 @@ To configure OIDC, fill in values from the Okta application.
 The default group affects only users who have **not yet logged in** to Duplicati Console. It will **not change** the group(s) of existing users.
 {% endhint %}
 
-<div><figure><img src="../.gitbook/assets/image18 (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/image18.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption></figcaption></figure></div>
 
 ### Enter Client ID, Client Secret, and Metadata URI
 
@@ -172,4 +172,4 @@ This allows your current account to be accessed with either login method.
    * Typically there is one option, but multiple can be configured.
 5. Click the login button to be redirected to Okta and complete sign-in.
 
-<div><figure><img src="../.gitbook/assets/image15.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image3 (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image7 (1).png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/image15.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image3.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image7.png" alt=""><figcaption></figcaption></figure></div>

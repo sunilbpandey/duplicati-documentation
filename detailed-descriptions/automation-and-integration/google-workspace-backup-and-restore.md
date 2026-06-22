@@ -32,7 +32,7 @@ A license is required to use Google Workspace backup in production. Contact Dupl
 
 To add a Google Workspace tenant to the backup, [set up a backup following the regular steps](../../getting-started/set-up-a-backup-in-the-ui.md). Then on the source page, click "Add remote path" in the top right:
 
-<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.52.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.14 (1).png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.52.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.14.png" alt=""></picture><figcaption></figcaption></figure>
 
 Type "workspace" in the search bar, or scroll down and find "Google Workspace" in the list and click "Choose":
 

@@ -8,7 +8,7 @@ Once Duplicati is running, you can set up a backup through the UI. If the UI is 
 
 In the UI, start by clicking "Add backup", and choose the option "Add a new backup":
 
-<figure><picture><source srcset="../.gitbook/assets/Screenshot 2025-11-03 at 13.11.15 (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2025-11-03 at 13.07.32 (1).png" alt=""></picture><figcaption><p>Configuring a new backup</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/Screenshot 2025-11-03 at 13.11.15.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2025-11-03 at 13.07.32.png" alt=""></picture><figcaption><p>Configuring a new backup</p></figcaption></figure>
 
 If you have an existing backup configuration you want to load in, see the [section on import/export](../detailed-descriptions/configuration-and-management/import-and-export-backup-configurations.md).
 

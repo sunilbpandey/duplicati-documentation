@@ -16,6 +16,8 @@
 * [Using Duplicati with MacOS](detailed-descriptions/platform-specific-guides/using-duplicati-with-macos.md)
 * [Using Duplicati with Windows](platform-specific-guides/using-duplicati-with-windows/README.md)
   * [Run Duplicati as a Windows Service](platform-specific-guides/using-duplicati-with-windows/run-duplicati-as-a-windows-service.md)
+  * [Hyper-V backup](platform-specific-guides/using-duplicati-with-windows/hyper-v-backup.md)
+  * [MSSQL backup](platform-specific-guides/using-duplicati-with-windows/mssql-backup.md)
 * [Using Duplicati from Docker](detailed-descriptions/platform-specific-guides/using-duplicati-from-docker.md)
 
 ## Configuration & Management
