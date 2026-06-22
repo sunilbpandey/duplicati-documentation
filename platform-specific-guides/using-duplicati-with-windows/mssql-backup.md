@@ -43,7 +43,7 @@ In short, the sequence is as follows:
 * Anything written to disk while the snapshot is active uses Copy-on-write
 * Duplicati reads the consistent snapshot and releases it after the backup ends
 
-This requires a small amount of extra disk and memory to store the data that changes while the snapshot is active, but this is released once the snapshot is releases. The end result is that MSSQL databases can continue to run with no downtime, and Duplicati can read a consistent copy.
+This requires a small amount of extra disk and memory to store the data that changes while the snapshot is active, but this is released once the snapshot is released. The end result is that MSSQL databases can continue to run with no downtime, and Duplicati can read a consistent copy.
 
 To ensure that MSSQL databases are correctly backed up, change the advanced option `--snapshot-policy` to `Required`:&#x20;
 
