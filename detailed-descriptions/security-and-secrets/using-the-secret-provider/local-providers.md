@@ -55,7 +55,9 @@ The secrets created from Duplicati will show up as "Generic Credentials" but Dup
 
 ## Using `libsecret` (Linux)
 
-The[ `libsecret` implementation](https://gnome.pages.gitlab.gnome.org/libsecret/) stores various credentials on Linux and integrates with various UI applications to let the user approve or reject attempts to read secrets. The `libsecret` provider supports a single optional setting, `collection`, which indicates what collection to read from. If not supplied the default collection is used. To use the `libsecret` provider, use this argument:
+The[ `libsecret` implementation](https://gnome.pages.gitlab.gnome.org/libsecret/) stores various credentials on Linux and integrates with various UI applications to let the user approve or reject attempts to read secrets. The `libsecret` provider supports a single optional setting, `collection`, which indicates what collection to read from. If not supplied the default collection is used. The default collection is usually `login` on Gnome-based systems and `kdewallet` on KDE-based systems, and will typically be unlocked when the user logs in.
+
+To use the `libsecret` provider, use this argument:
 
 ```
 --secret-provider=libsecret://
@@ -69,7 +71,7 @@ On KDE, make sure you have enabled the "KDE Wallet Subsystem" and also checked t
 
 ### Seahorse
 
-In Seahorse the passwords are shown in the wallet in a list an are not grouped. The default collection is usually `login` or `kdewallet`.
+In Seahorse the passwords are shown in the wallet in a list and are not grouped:
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2026-06-24 at 10.57.26.png" alt=""><figcaption></figcaption></figure>
 
