@@ -12,9 +12,9 @@ To start using a secret provider you need to set only a single option:
 --secret-provider=<url>
 ```
 
-This will make the secret provider available for the remainder of the application.&#x20;
+This will make the secret provider available for the remainder of the application.
 
-You can then insert placeholder values where you want secrets to appear but without storing the actual secret in Duplicati. For commandline users, the secrets can appear in both the backend destination or in the options.&#x20;
+You can then insert placeholder values where you want secrets to appear but without storing the actual secret in Duplicati. For commandline users, the secrets can appear in both the backend destination or in the options.
 
 As an example:
 
@@ -41,3 +41,9 @@ duplicati backup \
 ```
 
 To ensure you never run with an empty string or a placeholder instead of the real value, all values requested needs to be in the storage provider, or the operation will fail with a message indicating which key was not found.
+
+## Using secret provider in the user interface
+
+To set up a secret provider for the [TrayIcon](../../../duplicati-programs/trayicon.md), [Agent](../../../duplicati-programs/agent.md) or [Server](../../../duplicati-programs/server.md) setups, you can add the `--secret-provider=url` to their respective commandlines, or you can add it via the user interface. Set it up in "Settings" -> "Advanced options" to have it apply to all backups, or via "Advanced options" on the individual backups.
+
+<figure><picture><source srcset="../../../.gitbook/assets/Screenshot 2026-06-25 at 10.03.57.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/Screenshot 2026-06-25 at 10.03.37.png" alt=""></picture><figcaption></figcaption></figure>
