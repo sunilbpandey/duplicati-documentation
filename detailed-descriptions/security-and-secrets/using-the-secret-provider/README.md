@@ -47,3 +47,5 @@ To ensure you never run with an empty string or a placeholder instead of the rea
 To set up a secret provider for the [TrayIcon](../../../duplicati-programs/trayicon.md), [Agent](../../../duplicati-programs/agent.md) or [Server](../../../duplicati-programs/server.md) setups, you can add the `--secret-provider=url` to their respective commandlines, or you can add it via the user interface. Set it up in "Settings" -> "Advanced options" to have it apply to all backups, or via "Advanced options" on the individual backups.
 
 <figure><picture><source srcset="../../../.gitbook/assets/Screenshot 2026-06-25 at 10.03.57.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/Screenshot 2026-06-25 at 10.03.37.png" alt=""></picture><figcaption></figcaption></figure>
+
+Remember to click "Save settings" after configuring the provider.
