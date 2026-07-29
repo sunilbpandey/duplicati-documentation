@@ -27,7 +27,7 @@ The commandline interface has full documentation for all supported options and s
 ```
 See duplicati-cli help <topic> for more information.
   General: example, changelog
-  Commands: backup, find, restore, delete, compact, test, compare, purge, vacuum
+  Commands: backup, sync, find, restore, delete, compact, test, compare, purge, vacuum
   Repair: repair, affected, list-broken-files, purge-broken-files
   Debug: debug, logging, create-report, test-filters, system-info, send-mail
   Targets: aliyunoss, azure, b2, box, cloudfiles, dropbox, ftp, aftp, file, gcs, googledrive, e2,
@@ -69,6 +69,38 @@ The most common additional option(s) supplied are the filter options. The filter
 When supplying only exclude filters, any file not matching will be included; likewise, if only includes are present, anything else will be included. The order of the arguments define the order the filters are evaluated. Beware that some symbols, such as `*` and `\` needs to be escaped on the commandline, and rules vary based on operating system and terminal application/shell.
 
 If either of the `--keep-time`, `--keep-versions`, or `--retention-policy` options are set, a successfull backup will subsequently invoke the delete and compact operation as needed. This enables a single command to run all required maintenance, but can optionally be invoked as manual steps.
+
+## Sync
+
+{% hint style="info" %}
+The sync command is available from version 2.3.1.0.
+{% endhint %}
+
+The sync command mirrors one or more source paths to a destination by copying the local files to the remote destination unencrypted. Unlike a backup, a sync keeps an exact mirror of the source on the destination: files are uploaded in their original (uncompressed, unencrypted) form, and with `--sync-then-delete` files that no longer exist locally are removed from the destination. To run a sync, use the following command:
+
+```
+duplicati-cli sync <remote url> <source path> [options]
+```
+
+The `source path` argument can be repeated to include multiple top-level folders. The copy is a one-way sync: source files are copied to the destination, but no changes on the destination are ever propagated back to the source.
+
+{% hint style="warning" %}
+Because the data is stored unencrypted, encryption must be disabled with `--no-encryption`. The sync operation maintains its own optional local database to track what has been uploaded.
+{% endhint %}
+
+Sources can be either local paths or remote sources. To use a remote source, prefix the source path with `@mount-path|` followed by the remote url, e.g. `@/tmp|ssh://hostname/path`. The sync command will enumerate the sources and copy all files to the destination. Snapshots are also supported; if snapshots are enabled, the copy is performed from the snapshot to ensure reliable reads. The sync command also supports multiple destinations.
+
+The sync behavior is controlled by the following options:
+
+| Option                | Description                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--no-encryption`     | Use this to make an unencrypted mirror. Encryption is not supported for sync and must be disabled.                                                                                                                                                                                                                                                                                                                  |
+| `--sync-remote-state` | Controls how the sync determines the remote state of each folder. `UseRemoteState` (default) enumerates the remote destination per folder (safest, one listing per folder). `UseLocalState` uses the local database and assumes it is up to date (faster, no extra listings). `BlindlyUpload` uploads every local file unconditionally without checking remote state (fastest, deletes are skipped with a warning). |
+| `--sync-then-delete`  | Deletes files on the remote that no longer exist locally, keeping the destination an exact mirror of the source. Default is `false`. Has no effect with `--sync-remote-state=BlindlyUpload`.                                                                                                                                                                                                                        |
+| `--sync-verify-hash`  | Verifies file content using SHA-256 hashes when size and time match, to detect files that changed without updating the timestamp. Default is `false`.                                                                                                                                                                                                                                                               |
+| `--sync-recheck`      | Forces a full remote listing to rebuild the local sync cache. Under `UseLocalState` this effectively behaves as `UseRemoteState` for the run and refreshes the local inventory. Default is `false`.                                                                                                                                                                                                                 |
+
+As with the backup command, the `--include` and `--exclude` filters can be used to selectively change what files and folders are included from the sources. All commands also support the `--dry-run` parameter to simulate the operation without changing any local or remote files.
 
 ## Restore
 
