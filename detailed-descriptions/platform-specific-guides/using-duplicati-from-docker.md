@@ -16,6 +16,17 @@ To ensure that any secrets configured within the application are not stored in p
 
 See also the DockerHub page for details on how to configure the image: [https://hub.docker.com/r/duplicati/duplicati/](https://hub.docker.com/r/duplicati/duplicati/)
 
+### Data folder permissions
+
+Starting with version **2.3.1.0**, Duplicati requires that the data folder has the exact expected permissions, or it will refuse to use it. Some Docker setups may not be able to set the permissions due to the mount setup and will need to opt out of the permission check by setting the environment variable `DUPLICATI__ALLOW_INSECURE_DATAFOLDER=true` in the image:
+
+```yaml
+environment:
+  DUPLICATI__ALLOW_INSECURE_DATAFOLDER: "true"
+```
+
+See the [server database documentation](../database-and-storage/the-server-database.md#limited-access-to-the-database-folder) for more details on the data folder permission check.
+
 ## Hostname access
 
 Duplicati's server allows access from IP-based requests, but disallows access from requests that use a hostname. This is done to prevent certain DNS-based attacks, but will also block attempts to use a correct hostname. To avoid this, set the environment variable:
@@ -52,8 +63,8 @@ To use the preload approach, prepare a `preload.json` file with your encryption 
 {
   "env": {
     "server": {
-        "SETTINGS_ENCRYPTION_KEY": "<real encryption key>",
-        "DUPLICATI__WEBSERVICE_PASSWORD": "<ui password>"
+      "SETTINGS_ENCRYPTION_KEY": "<real encryption key>",
+      "DUPLICATI__WEBSERVICE_PASSWORD": "<ui password>"
     }
   }
 }

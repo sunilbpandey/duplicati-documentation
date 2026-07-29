@@ -86,7 +86,7 @@ C:\Program Files\Duplicati 2\Duplicati.Agent.exe register <registration url>
 
 After the Agent has been registered, restart the service and it will now be available on the Duplicati Console.
 
-If you have a [pre-authenticated link](../../duplicati-programs/agent.md#registering-the-machine) for registering the machine, and would like to automate the process, you can place a file in `C:\ProgramData\Duplicati\preload.json` with content similar to:
+If you have a [pre-authenticated link](../../duplicati-programs/agent.md#registering-the-machine) for registering the machine, and would like to automate the process, you can place a file in the installation folder (or [data folder](../../detailed-descriptions/database-and-storage/the-server-database.md)) with content similar to:
 
 ```json
 {

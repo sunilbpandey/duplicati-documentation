@@ -53,5 +53,8 @@ Similar to the [link approach](connecting-to-the-duplicati-console.md#connect-wi
 <figure><picture><source srcset="../.gitbook/assets/Screenshot 2026-05-28 at 11.31.47.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2026-05-28 at 11.31.37.png" alt=""></picture><figcaption></figcaption></figure>
 
 You will then download a file named [`preload.json`](../detailed-descriptions/configuration-and-management/preload-settings.md) which has the link inside. You simply place this file in either the installation folder for Duplicati or in the [datafolder](../detailed-descriptions/database-and-storage/the-server-database.md), and the open-source client will automatically connect to the console when it (re-)starts. After starting with the preload file, the file can be deleted, but has no effect if it is left behind.
+{% hint style="info" %}
+Note that a `preload.json` placed inside the data folder is only loaded if the folder passes the [permission check](../detailed-descriptions/database-and-storage/the-server-database.md#limited-access-to-the-database-folder).
+{% endhint %}
 
 For automated install, an MDM tool or similar can place the `preload.json` file in the target folder prior to installing Duplicati such that it automatically connects on startup.

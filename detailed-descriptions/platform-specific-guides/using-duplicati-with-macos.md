@@ -53,7 +53,7 @@ With the [Agent](../../duplicati-programs/agent.md) there is a minimal setup req
 
 If the Agent is not registered with the Console, it will open the default browser and ask to be registered. Once registered, it will run in the background and be avilable on the Duplicati Console for management.
 
-If you have a [pre-authenticated link](../../duplicati-programs/agent.md#registering-the-machine) for registering the machine, you can place a file in `/usr/local/share/Duplicati/preload.json` with content similar to:
+If you have a [pre-authenticated link](../../duplicati-programs/agent.md#registering-the-machine) for registering the machine, you can place a file in the installation folder (or [data folder](../database-and-storage/the-server-database.md)) with content similar to:
 
 ```json
 {

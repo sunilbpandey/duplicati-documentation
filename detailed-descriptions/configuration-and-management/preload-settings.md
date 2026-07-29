@@ -10,15 +10,17 @@ For single-machine users, the preload settings are a convenient way to change th
 
 To support different ways of deploying the settings file, 3 locations are checked:
 
-* `%CommonApplicationData%\Duplicati\preload.json`
-  * see this [SO thread](https://stackoverflow.com/questions/895723/environment-getfolderpath-commonapplicationdata-is-still-returning-c-docum) for details, but usually
-  * Linux: `/usr/share/Duplicati/preload.json`
-  * MacOS: `/usr/local/share/Duplicati/preload.json`
-  * Windows:`C:\ProgramData\Duplicati\preload.json`
 * Inside the installation folder
 * The file pointed to by `DUPLICATI_PRELOAD_SETTINGS`
+* Inside the data folder
 
 For security reasons, all these paths are expected to be writeable only by Administrator/root so unprivileged users cannot modify the values. If the settings contains secrets, make sure that only the relevant users can read them.
+
+{% hint style="warning" %}
+Starting with version **2.3.1.0**, a `preload.json` placed inside the data folder is only loaded if the folder passes the [data folder permission check](../database-and-storage/the-server-database.md#limited-access-to-the-database-folder), or if one of the opt-out methods for insecure permissions is activated. If the folder permissions do not match the expected values and the check is not bypassed, the `preload.json` file inside the data folder is ignored.
+
+Additionally, the previously trusted paths `/usr/local/share/Duplicati/preload.json` (macOS) and `C:\ProgramData\Duplicati\preload.json` (Windows) are no longer supported, as they cannot be guaranteed to be locked down.
+{% endhint %}
 
 The loading of the files is default silent, even if the parsing fails, but the environment variable `DUPLICATI_PRELOAD_SETTINGS_DEBUG=1` will toggle loader debug information to help investigate issues.
 

@@ -25,7 +25,7 @@ The simplest way to apply an encryption key, is to locate the server database, a
 ```json
 {
   "env": {
-    "*": { 
+    "*": {
       "SETTINGS_ENCRYPTION_KEY": "<key>"
     }
   }
@@ -55,7 +55,19 @@ To limit unauthorized access to the server database and other settings, Duplicat
 
 On Windows the permissions are set to include the current user, the Administrator and the System account. On Linux/MacOS the permissions are set to the current user only, as `root` always has access.
 
-For most uses, this setup does not cause issues, but if you rely on access from a different user account, you need to place a file called `insecure-permissions.txt` inside the data folder (it can be an empty file). When Duplicati starts, it will look for such a file, and if the file does not exist, it will reset the permissions, locking out any other account than the current user.
+Starting with version **2.3.1.0**, Duplicati **requires** that the data folder has the exact expected permissions, or it will refuse to use it. Duplicati will automatically lock down folders it creates, so for most users no change is required. However, if you rely on lax folder permissions, such as access from a different user account, you need to opt out of the permission check. You can opt out using any of these methods:
+
+- Pass the commandline option `--allow-insecure-datafolder`
+- Set the environment variable `DUPLICATI__ALLOW_INSECURE_DATAFOLDER=true`
+- Place a file named `insecure-permissions.txt` in the installation folder (it can be an empty file)
+
+{% hint style="warning" %}
+The previous method of placing `insecure-permissions.txt` in the data folder is no longer supported. The file must now be placed in the installation folder.
+{% endhint %}
+
+To force the correct permissions on an existing data folder, use the [ConfigureTool](../../duplicati-programs/command-line-interface-cli-1/configuretool.md#securing-the-data-folder) `secure-datafolder` command.
+
+Some Docker setups may not be able to set the permissions and will need to apply `DUPLICATI__ALLOW_INSECURE_DATAFOLDER=true` in the image to run without the protections.
 
 ### Database location on Windows
 

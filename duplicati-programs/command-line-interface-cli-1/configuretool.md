@@ -126,9 +126,9 @@ duplicati-configure https remove
 
 This is useful when:
 
-* You no longer need HTTPS
-* You suspect the CA has been compromised
-* You want to clean up before uninstalling Duplicati
+- You no longer need HTTPS
+- You suspect the CA has been compromised
+- You want to clean up before uninstalling Duplicati
 
 #### Options
 
@@ -150,10 +150,10 @@ duplicati-configure https show
 
 This displays:
 
-* CA certificate details (subject, issuer, validity dates, trust store status)
-* Server certificate details (subject, issuer, validity dates, DNS names, IP addresses)
-* Database encryption status
-* Certificate expiration status
+- CA certificate details (subject, issuer, validity dates, trust store status)
+- Server certificate details (subject, issuer, validity dates, DNS names, IP addresses)
+- Database encryption status
+- Certificate expiration status
 
 #### Options
 
@@ -195,6 +195,29 @@ This creates `duplicati-server.crt` in the current directory. To specify a custo
 duplicati-configure https export --file ~/Desktop/duplicati-server.crt
 ```
 
+## Securing the data folder
+
+Starting with version **2.3.1.0**, Duplicati requires that the data folder has the exact expected permissions, or it will refuse to use it. The `secure-datafolder` command can be used to force the correct permissions on the data folder.
+
+To apply the expected permissions to the data folder:
+
+```bash
+duplicati-configure secure-datafolder
+```
+
+This will set the folder permissions such that only the current user (and on Windows, the Administrator and System accounts) have access. On Linux/macOS the permissions are set to the current user only, as `root` always has access.
+
+If the data folder is intended to be used by a service account rather than the current user, use the `--for-service` option. This excludes the current user from the permissions and instead grants access only to the accounts that the service runs under.
+
+For more information on the data folder permissions, see the [server database documentation](../../detailed-descriptions/database-and-storage/the-server-database.md#limited-access-to-the-database-folder).
+
+#### Options
+
+| Option          | Description                                                          |
+| --------------- | -------------------------------------------------------------------- |
+| `--data-folder` | Path to the Duplicati data folder (defaults to standard location)    |
+| `--for-service` | Set permissions for running as a service (excludes the current user) |
+
 ## Browser Trust Configuration
 
 ### Chrome and Firefox on Linux
@@ -227,24 +250,24 @@ For Flatpak or Snap installations, browsers run in a sandbox that may restrict f
 
 ### Local-Only CA
 
-* The CA is generated locally on your machine and is not shared with any external service
-* The CA certificate is installed only in your system's local trust store
-* Other machines do not trust this CA unless explicitly configured to do so
-* The CA should never be exported or shared with other systems
+- The CA is generated locally on your machine and is not shared with any external service
+- The CA certificate is installed only in your system's local trust store
+- Other machines do not trust this CA unless explicitly configured to do so
+- The CA should never be exported or shared with other systems
 
 ### CA Constraints
 
 The CA certificate has `pathLenConstraint=0` in its Basic Constraints extension, which means:
 
-* The CA can sign end-entity (server) certificates
-* The CA **cannot** sign subordinate/intermediate CA certificates
-* This limits the scope of trust to only certificates directly signed by this CA
+- The CA can sign end-entity (server) certificates
+- The CA **cannot** sign subordinate/intermediate CA certificates
+- This limits the scope of trust to only certificates directly signed by this CA
 
 ### Certificate Validity Periods
 
-* **CA Certificate:** Valid for approximately 10 years
-* **Server Certificate:** Valid for 90 days (browser requirement)
-* **Auto-renewal:** Server certificates are automatically renewed 30 days before expiration
+- **CA Certificate:** Valid for approximately 10 years
+- **Server Certificate:** Valid for 90 days (browser requirement)
+- **Auto-renewal:** Server certificates are automatically renewed 30 days before expiration
 
 ### CA Key Storage Security
 
@@ -273,9 +296,9 @@ If you suspect your CA private key has been compromised:
 
 If you prefer providing your own certificate instead of using the auto-generated CA, you can do so by setting the `server-ssl-certificate` and `server-ssl-certificatepassword` settings. When using custom certificates:
 
-* Auto-renewal will not be activated
-* No CA will be generated
-* You are responsible for certificate renewal
+- Auto-renewal will not be activated
+- No CA will be generated
+- You are responsible for certificate renewal
 
 See the [Server documentation](../server.md) for details on configuring custom SSL certificates.
 
