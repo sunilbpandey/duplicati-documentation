@@ -11,7 +11,7 @@ Microsoft 365 backup and restore was added in Stable 2.3
 {% endhint %}
 
 {% hint style="warning" %}
-The Microsoft 365 backup feature has a limit that covers up to **5 mailboxes or sites**. The Office 365 backup feature is source-available, but **not open-source** like the rest of Duplicati. There are no limitations on restore.
+The Microsoft 365 backup feature has a limit that covers up to **5 mailboxes or sites**. The license counter excludes unlicensed shared mailboxes. The Office 365 backup feature is source-available, but **not open-source** like the rest of Duplicati. There are no limitations on restore.
 
 A license is required to use Microsoft 365 backup in production. Contact Duplicati Inc. support or sales to obtain a license.
 {% endhint %}
@@ -25,6 +25,9 @@ A license is required to use Microsoft 365 backup in production. Contact Duplica
 * **Restore to local disk**: It is possible to restore all data to a local destination for forensics or manual investigation.
 * **Cross-tenant support**: Data can be restored into different tenants.
 * **Cross-target support**: Data from one user/group/site can be restored into another.
+* **Shared mailboxes**: Shared mailboxes within the tenant are detected and enumerated automatically. Unlicensed shared mailboxes do not count toward the license limit.
+* **SharePoint subsites**: Subsites beneath a site collection are included in the backup.
+* **Classification filtering**: Users, sites and groups can be filtered at the top level based on their classification using `--office365-included-user-classifications`, `--office365-included-site-classifications`, and `--office365-included-group-classifications`.
 
 ### Configure Microsoft 365 backup
 
@@ -66,10 +69,13 @@ When making backups of an Microsoft 365 tenant, the advanced option `--store-met
 
 | Parameter                          | Description                                                                                                                                                                                                                                                                                                                                         |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--office365-included-root-types`  | The different root types to include for backups. The default setting is to include all types: `Users`, `Groups` and `Sites`                                                                                                                                                                                                                         |
-| `--office365-included-user-types`  | <p>The data types to include from users in backups. The default settings include: <code>Profile</code>, <code>Mailbox</code>, <code>Calendar</code>, <code>Contacts</code>, <code>Planner</code> and <code>Chats</code>. <br><br>If delegated permissions are used, these types can also be included: <code>Tasks</code> and <code>Notes</code></p> |
-| `--office365-included-group-types` | <p>The data types to include from groups in backups. The default settings include: <code>Mailbox</code>, <code>Files</code>, <code>Planner</code> and <code>Teams</code>.<br><br>If delegated permissions are used, these types can also be included: <code>Calendar</code> and <code>Notes</code></p>                                              |
-| `--office365-ignore-existing`      | When restoring data into a tenant the default is to check for existing data to avoid creating duplicates. Use this option to always recreate data in the destination.                                                                                                                                                                               |
+| `--office365-included-root-types`            | The different root types to include for backups. The default setting is to include all types: `Users`, `Groups` and `Sites`                                                                                                                                                                                                                         |
+| `--office365-included-user-types`            | <p>The data types to include from users in backups. The default settings include: <code>Profile</code>, <code>Mailbox</code>, <code>Calendar</code>, <code>Contacts</code>, <code>Planner</code> and <code>Chats</code>. <br><br>If delegated permissions are used, these types can also be included: <code>Tasks</code> and <code>Notes</code></p> |
+| `--office365-included-group-types`           | <p>The data types to include from groups in backups. The default settings include: <code>Mailbox</code>, <code>Files</code>, <code>Planner</code> and <code>Teams</code>.<br><br>If delegated permissions are used, these types can also be included: <code>Calendar</code> and <code>Notes</code></p>                                              |
+| `--office365-included-user-classifications`  | <p>Top-level filter for users based on classification. A comma-separated list (flags) of: <code>Licensed</code>, <code>Unlicensed</code>, <code>SharedMailboxWithStorage</code>, <code>SharedMailboxWithoutStorage</code>. When set, only users matching the classification are included.</p>                                                      |
+| `--office365-included-group-classifications` | Top-level filter for groups based on classification. A comma-separated list (flags) of: `Unified` (Microsoft 365 group), `NotUnified` (security group or distribution list). When set, only groups matching the classification are included.                                                                                                       |
+| `--office365-included-site-classifications`  | Top-level filter for sites based on classification. A comma-separated list (flags) of: `Group` (group-connected team site), `Classic` (non-group team site), `Communication` (modern communication site), `Personal` (OneDrive for Business site), `Other`. When set, only sites matching the classification are included.                       |
+| `--office365-ignore-existing`                | When restoring data into a tenant the default is to check for existing data to avoid creating duplicates. Use this option to always recreate data in the destination.                                                                                                                                                                               |
 
 #### Permission types
 
@@ -111,9 +117,10 @@ When making backups of an Microsoft 365 tenant, the advanced option `--store-met
 | Group members         | ✅      | ✅            | Membership restored                                                                          |
 | Group owners          | ✅      | ✅            | Ownership restored                                                                           |
 | Group settings        | ✅      | ✅            | Configuration properties                                                                     |
-| SharePoint sites      | ✅      | ✅            | Document libraries                                                                           |
-| SharePoint lists      | ✅      | ✅            | Including list items                                                                         |
-| List item attachments | ✅      | ✅            | File attachments                                                                             |
+| SharePoint sites      | ✅      | ✅            | Document libraries, including subsites beneath site collections                |
+| SharePoint lists      | ✅      | ✅            | Including list items                                                         |
+| List item attachments | ✅      | ✅            | File attachments                                                             |
+| Shared mailboxes      | ✅      | ✅            | Detected and enumerated within the tenant; excluded from license count unless licensed |
 
 ### Backup and restore details by type
 
@@ -263,6 +270,7 @@ All OneNote items require delegated permissions
 **Document libraries**
 
 * Files and folders captured and restored similarly to OneDrive.
+* Subsites beneath a site collection are included in the backup.
 
 **Lists**
 

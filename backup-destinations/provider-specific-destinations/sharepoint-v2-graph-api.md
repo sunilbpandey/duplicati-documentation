@@ -4,6 +4,10 @@ description: This page describes the SharePoint v2 storage destination
 
 # SharePoint v2 (Graph API)
 
+{% hint style="info" %}
+As of Duplicati 2.3.1.0 the "SharePoint v2" backend has been renamed to just "SharePoint". The previous legacy "SharePoint" backend is now [deprecated](sharepoint-destination.md).
+{% endhint %}
+
 Duplicati supports using [Microsoft SharePoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration) as a storage destination. This page describes the SharePoint that uses the Graph API, for the [SharePoint provider that uses the legacy API, see SharePoint](sharepoint-destination.md).
 
 ## User interface

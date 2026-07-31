@@ -4,6 +4,10 @@ description: This page describes the OneDrive For Business storage destination
 
 # OneDrive For Business Destination
 
+{% hint style="danger" %}
+This backend is **deprecated** as Microsoft has shut down the API it was calling. Use the [OneDrive](onedrive-destination.md) backend which uses the Microsoft Graph API and is also compatible with OneDrive for Business. Migrate existing backups to the new backend.
+{% endhint %}
+
 Duplicati supports using [Microsoft OneDrive for Business](https://www.microsoft.com/en-us/microsoft-365/onedrive/onedrive-for-business) as a storage destination. Note that Duplicati stores compressed and encrypted volumes on OneDrive and does not store files so they are individually accessible from OneDrive.
 
 ## User interface
