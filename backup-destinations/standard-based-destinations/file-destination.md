@@ -51,7 +51,7 @@ Because a local storage destination is expected to have a very low latency, the 
 
 ## Removable drives (mostly Windows)
 
-For removable drives, the mount path can sometimes change when inserting the drive. This is most prominent on WIndows, where the drive letters are assigned based on what order the drives are connected. To support different paths, you can supply multiple alternate paths with `--alternate-target-paths`, where each path is separated with the system path separator (`;`on Windows, `:`on Linux/MacOS):
+For removable drives, the mount path can sometimes change when inserting the drive. This is most prominent on Windows, where the drive letters are assigned based on what order the drives are connected. To support different paths, you can supply multiple alternate paths with `--alternate-target-paths`, where each path is separated with the system path separator (`;`on Windows, `:`on Linux/MacOS):
 
 ```
 // Note, the paths are URL encoded here: E:\backupdata;G:\backupdata

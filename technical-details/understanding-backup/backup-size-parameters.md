@@ -20,7 +20,7 @@ Importantly, since the block size is fixed, it is not possible to change it afte
 
 ## Remote volume size
 
-The remote volume size defines what size files are restored on the remote destination. When changing the remote volume size, it directly affects the number of files stored on the remote destination. Ignoring deduplication and compression, you can roughly estimate the number of files by dividing the source sixe with the remote volume size.
+The remote volume size defines what size files are restored on the remote destination. When changing the remote volume size, it directly affects the number of files stored on the remote destination. Ignoring deduplication and compression, you can roughly estimate the number of files by dividing the source size with the remote volume size.
 
 Having a large volume size decreases the overhead associated with each file, such as headers, initial transfer handshake, smaller lists, etc. However, as described in the section on [how restore works](../understanding-restore/how-restore-works.md), it is required that a full remote volume is downloaded to restore even a small file. If your use case requires restoring multiple small files, they may be scattered across multiple remote volumes, causing a large download and processing overhead.
 

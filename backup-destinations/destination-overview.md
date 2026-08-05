@@ -8,7 +8,7 @@ description: >-
 
 Duplicati makes backups of files, called the source, and places the backup data at a destination chosen by the user. To make Duplicati as versatile as possible, each of the destinations are implemented as a "destination" (or "backend"), each with different properties.
 
-Some storage providers support multiple protocols with each their strenghts, and you can generally pick which storage destination provider you like, but if there is a specific implementation for a given storage provider, that is usually the best pick.
+Some storage providers support multiple protocols with each their strengths, and you can generally pick which storage destination provider you like, but if there is a specific implementation for a given storage provider, that is usually the best pick.
 
 Each storage destination has a number of options that can be provided via a URL like format. The options should preferably be provided as part of the URL, but can also be provided via regular commandline options. For instance, the `--use-ssl=true` flag can also be added to the URL with `&use-ssl=true`. If both are provided, the URL value is used.
 

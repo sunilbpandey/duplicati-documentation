@@ -4,7 +4,7 @@ description: This page describes how to restore files using the Duplicati user i
 
 # Restoring files
 
-The most important reason to make a backup is the ability to recover the data at a later stage, usually due to some unforseen incident. Depending on the incident, the original configuration may not be available.
+The most important reason to make a backup is the ability to recover the data at a later stage, usually due to some unforeseen incident. Depending on the incident, the original configuration may not be available.
 
 To start a restore process in Duplicati, start on the "Restore" page.
 
@@ -24,7 +24,7 @@ To restore files from the backup, Duplicati needs only to know how to access the
 This option is useful restoring from another machine than the one that made the backup originally, but is not recommended for regular operations due to the need to download and process more data.
 {% endhint %}
 
-To restore directly from the backup files, the first step is to provide the destination details. These details are the same as you supplied initially when creating the backup. if you are using a cloud provider, you can usually get the needed information via your account on the vendors website. You can see a list of the [destinations that are supported by Duplicati](../backup-destinations/destination-overview.md).
+To restore directly from the backup files, the first step is to provide the destination details. These details are the same as you supplied initially when creating the backup. If you are using a cloud provider, you can usually get the needed information via your account on the vendors website. You can see a list of the [destinations that are supported by Duplicati](../backup-destinations/destination-overview.md).
 
 <figure><picture><source srcset="../.gitbook/assets/Screenshot 2025-11-03 at 13.44.55.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2025-11-03 at 13.44.45.png" alt=""></picture><figcaption><p>Supply storage destination details</p></figcaption></figure>
 
@@ -43,7 +43,7 @@ If you have a configuration file you can use the information in that file to avo
 In the dialog, provide the exported configuration file. If the file is encrypted, you will be asked to enter the file passphrase.
 
 {% hint style="info" %}
-The passphrase the configuration file is encrypted with is not neccesarily the same as the passphrase used to encrypt the backup with.
+The passphrase the configuration file is encrypted with is not necessarily the same as the passphrase used to encrypt the backup with.
 {% endhint %}
 
 Once the configuration is correct, click the "Restore" button and you will be ready to choose files to restore.

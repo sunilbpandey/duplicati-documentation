@@ -4,7 +4,7 @@ description: This page describes the Agent executable
 
 # Agent
 
-The Duplicati Agent is one of the primary ways to run Duplicati, similar to the [Server](server.md) and [TrayIcon](trayicon.md). The Agent can be deployed in settings where there is no desktop or user interaction is not desired. The Agent needs to connect to a remote control destination from wher it can be controlled, and due to this, the Agent employs a number of additional settings that prevents applications from running on the same machine to interact with the Agent.
+The Duplicati Agent is one of the primary ways to run Duplicati, similar to the [Server](server.md) and [TrayIcon](trayicon.md). The Agent can be deployed in settings where there is no desktop or user interaction is not desired. The Agent needs to connect to a remote control destination from where it can be controlled, and due to this, the Agent employs a number of additional settings that prevents applications from running on the same machine to interact with the Agent.
 
 {% hint style="info" %}
 The Agent requires an Enterprise plan

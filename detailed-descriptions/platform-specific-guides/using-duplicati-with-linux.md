@@ -8,7 +8,7 @@ Before you can install Duplicati, you need to decide on three different paramete
 
 * The type you want: [GUI](../../duplicati-programs/trayicon.md), [Server](../../duplicati-programs/server.md), [Agent](../../duplicati-programs/agent.md), [CLI](../../duplicati-programs/command-line-interface-cli.md).
 * Your package manager: `apt`, `yum` or something else.
-* You machine CPU type: x64, Arm64 or Arm7
+* Your machine CPU type: x64, Arm64 or Arm7
 
 ## Deciding on type
 
@@ -113,7 +113,7 @@ Then edit the file and add the supplementary groups:
 SupplementaryGroups=group1 group2
 ```
 
-When you save and exit, an override file will be created, typically in `/etc/systemd/system/duplicati.service.d/override.conf` . This method ensures that a package upgrade does not erase you edits.
+When you save and exit, an override file will be created, typically in `/etc/systemd/system/duplicati.service.d/override.conf` . This method ensures that a package upgrade does not erase your edits.
 
 Finally reload and restart the service so the new group membership takes effect:
 

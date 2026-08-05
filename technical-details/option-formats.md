@@ -15,7 +15,7 @@ A boolean option passed will translate to the value `true` if it is supplied wit
 --use-ssl=true
 ```
 
-It is possible to use the following "thruth values": `1`, `on`, `true`, `yes`.&#x20;
+It is possible to use the following "truth values": `1`, `on`, `true`, `yes`.&#x20;
 
 The "false values" are: `0`, `off`, `false`, `no`.
 
@@ -33,11 +33,11 @@ If no suffix is given, the context has a default suffix that is applied, usually
 
 Despite the naming, the sizes are interpreted as [kiki-bytes](https://simple.wikipedia.org/wiki/Kibibyte). Supported suffixes are:
 
-* `b` (or no suffix): bytes, multipler is 1
+* `b` (or no suffix): bytes, multiplier is 1
 * `kb`: kilobytes, multiplier is 1024
 * `mb`: megabytes, multiplier is 1024^2
 * `gb`: gigabytes, multiplier is 1024^3,
-* `tb`: terrabytes, multiplier is 2024^4
+* `tb`: terabytes, multiplier is 1024^4
 
 ## Timespans, timestamps, and durations
 

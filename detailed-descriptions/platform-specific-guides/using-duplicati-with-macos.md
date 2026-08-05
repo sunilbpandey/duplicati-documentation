@@ -7,7 +7,7 @@ description: This page describes common scenarios for configuring Duplicati with
 Before you can install Duplicati, you need to decide on two different parameters:
 
 * The type you want: [GUI](../../duplicati-programs/trayicon.md), [Server](../../duplicati-programs/server.md), [Agent](../../duplicati-programs/agent.md), [CLI](../../duplicati-programs/command-line-interface-cli.md).&#x20;
-* You machine CPU type: Arm64 or x64
+* Your machine CPU type: Arm64 or x64
 
 ## Deciding on type
 

@@ -4,7 +4,7 @@ description: This page describes the different packages offered by Duplicati
 
 # Package options
 
-To better fit a number of different use-cases, Duplicati is packaged into different installers, with different purposes. The choice of which package makes most sense is related to where and how you intend yo use Duplicati. There are three parameters that define the packages:
+To better fit a number of different use-cases, Duplicati is packaged into different installers, with different purposes. The choice of which package makes most sense is related to where and how you intend to use Duplicati. There are three parameters that define the packages:
 
 * Operating system and processor type
 * Usage type
@@ -16,7 +16,7 @@ The operating system and processor type are defined by the machine you run Dupli
 
 Because every Windows version includes a desktop component, there are only two options for the usage type: [GUI](../duplicati-programs/trayicon.md) and [Agent](../duplicati-programs/agent.md).
 
-The most versatile option is the **GUI** package, which also includes all the commandline utilities. Due to the way Windows works, it is possible to install the GUI version and use only the [Server](../duplicati-programs/server.md) or [Commandline](../duplicati-programs/command-line-interface-cli-1/) components. This works beacuse each component is an executable that can be launched independently. The overhead for the unused executables is very low, usually less than 1 MiB.
+The most versatile option is the **GUI** package, which also includes all the commandline utilities. Due to the way Windows works, it is possible to install the GUI version and use only the [Server](../duplicati-programs/server.md) or [Commandline](../duplicati-programs/command-line-interface-cli-1/) components. This works because each component is an executable that can be launched independently. The overhead for the unused executables is very low, usually less than 1 MiB.
 
 The **Agent** form is a reduced version of Duplicati, usable for integrating with the [Duplicati Console](https://app.gitbook.com/s/7cMJiGuXy340g9NzpxLY/duplicati-console) and is intended to run without any local access possible.
 
@@ -32,7 +32,7 @@ The **CLI** package has very few dependencies, as everything is bundled with the
 
 The **Agent** form is a reduced version of Duplicati, usable for integrating with the [Duplicati Console](https://app.gitbook.com/s/7cMJiGuXy340g9NzpxLY/duplicati-console) and is intended to run without any local access possible.
 
-For installation, Duplicati offers `.deb` packages for the Debian based distros, such as Ubuntu and Mint, as well as `.rpm` packages for the Redhat based distros, such as CentOS. There are also `.zip` packages available, which allows you to fully self-manage the installation and dependencies. If you are using the `.zip` packages the only thin missing is the service files used to integrate with `launchctl`. Duplicati is also available as an AppImage for a self-contained, portable install.
+For installation, Duplicati offers `.deb` packages for the Debian based distros, such as Ubuntu and Mint, as well as `.rpm` packages for the Redhat based distros, such as CentOS. There are also `.zip` packages available, which allows you to fully self-manage the installation and dependencies. If you are using the `.zip` packages the only thing missing is the service files used to integrate with `launchctl`. Duplicati is also available as an AppImage for a self-contained, portable install.
 
 If you are using [SELinux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux), there is currently an extra step to ensure that the binaries, which are placed in `/usr/lib/duplicati`, are allowed to execute:
 

@@ -18,7 +18,7 @@ To set up a new backup there are some details that are required, and these are d
 2. [Storage destination](set-up-a-backup-in-the-ui.md#storage-destination) (where to store the backups)
 3. [Source data](set-up-a-backup-in-the-ui.md#source-data) (what data should be backed up)
 4. [Schedule](set-up-a-backup-in-the-ui.md#schedule) (automatically run backups)
-5. [Retention and miscelaneous](set-up-a-backup-in-the-ui.md#retention-and-miscelaneous) (when to delete old backups and more)
+5. [Retention and miscellaneous](set-up-a-backup-in-the-ui.md#retention-and-miscellaneous) (when to delete old backups and more)
 
 ## 1. Basic configuration
 
@@ -60,7 +60,7 @@ In the source picker view you can choose the files and folders you would like to
 
 <figure><picture><source srcset="../.gitbook/assets/Screenshot 2025-11-03 at 13.10.41.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2025-11-03 at 13.08.59.png" alt=""></picture><figcaption><p>Selecting source folders</p></figcaption></figure>
 
-For more advanced uses, you can also use the filters to set up rules for what to include and exclude. See the section on [how filters are evaluated in Duplicati](../detailed-descriptions/security-and-secrets/filters-in-duplicati.md) if your have advanced needs.
+For more advanced uses, you can also use the filters to set up rules for what to include and exclude. See the section on [how filters are evaluated in Duplicati](../detailed-descriptions/security-and-secrets/filters-in-duplicati.md) if you have advanced needs.
 
 Once you are satisfied with the source view, click the "Continue" button to continue to the schedule step.
 
@@ -74,7 +74,7 @@ If you prefer to run the backups manually, disable the scheduler, and you can us
 
 Once satisfied with the schedule, click "Continue".
 
-## 5. Retention and miscelaneous
+## 5. Retention and miscellaneous
 
 Even though Duplicati has deduplication and compression to reduce the stored data, it is inevitable that old data is stored that will take up space, but is not needed for restore. In this final configuration step you can decide when old versions are removed and what size of files to store on the destination.
 
@@ -82,7 +82,7 @@ Even though Duplicati has deduplication and compression to reduce the stored dat
 
 The size of remote volumes is meant for a balanced size usable with cloud-storage and a limited network connection. If you have a fast connection or store files on a local network, consider increasing the size of the remote volumes. For more information see [this page on the tradeoffs between sizes](https://forum.duplicati.com/t/choosing-sizes-in-duplicati/17683).
 
-For the retention setting, it is inveitable that the backups will grow as new and changed data is added to the backups. If nothing is ever deleted, the backup size will keep growing in size. With the retention settings you can choose how to automatically remove older versions.
+For the retention setting, it is inevitable that the backups will grow as new and changed data is added to the backups. If nothing is ever deleted, the backup size will keep growing in size. With the retention settings you can choose how to automatically remove older versions.
 
 The setting "Smart backup retention" is meant to be useful for most users where it keeps one daily backup and then gradually fewer versions going back in time.
 

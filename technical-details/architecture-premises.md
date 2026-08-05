@@ -16,9 +16,9 @@ It is also assumed that the remote destination is not owned by the entity making
 
 ## Overall design
 
-With the above assumptions and observations, the core of Duplicati was designed with specfic choices:
+With the above assumptions and observations, the core of Duplicati was designed with specific choices:
 
-* Each backup "copy" should a snapshot of the system
+* Each backup "copy" should be a snapshot of the system
 * Files are treated as a stream of blocks
 * Data is broken into fixed-size blocks
 * Blocks are only stored once to reduce storage space (deduplication)
@@ -27,7 +27,7 @@ With the above assumptions and observations, the core of Duplicati was designed 
 * Volumes are encrypted to ensure integrity and confidentiality (encryption)
 * No storage destination server/service is required (client-only)
 
-These choices are the foundation from which the rest of Duplicati is built. With the use of client-side encryption, Duplicati can be classified as a [Trust-no-one / Zero-Trust](https://en.wikipedia.org/wiki/Zero_trust_architecture) system, where the possesion of the encryption key decides who has access to the data.
+These choices are the foundation from which the rest of Duplicati is built. With the use of client-side encryption, Duplicati can be classified as a [Trust-no-one / Zero-Trust](https://en.wikipedia.org/wiki/Zero_trust_architecture) system, where the possession of the encryption key decides who has access to the data.
 
 To ensure that Duplicati can work with different storage destinations, such as S3 and a network share, any interaction with the storage destination is limited to 4 commands: GET, PUT, LIST, and DELETE. Any storage system that supports these 4 commands can work with Duplicati.
 

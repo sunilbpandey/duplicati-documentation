@@ -27,7 +27,7 @@ Internally, Duplicati represents folders with a trailing path separator, which m
     * `/home/myfile`
     * `/usr/file.bin`
 
-For brewity, the remainder of this page will only use the Linux/MacOS format in examples, but the same can be applied to the Windows paths.
+For brevity, the remainder of this page will only use the Linux/MacOS format in examples, but the same can be applied to the Windows paths.
 
 ## Filter types
 

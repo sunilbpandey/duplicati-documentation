@@ -14,7 +14,7 @@ To use the AutoUpdater, simply invoke it from the commandline:
 duplicati-autoupdater check
 ```
 
-This will check if there is a newer version available and remote the running version number.
+This will check if there is a newer version available and report the running version number.
 
 It is also possible to download an updated installer package:
 
@@ -22,7 +22,7 @@ It is also possible to download an updated installer package:
 duplicati-autoupdater download
 ```
 
-The download feature checks what [package](../../installation-details/package-options.md) Duplicati is current installed with, and then obtains the most recent URL for that package and downloads it the the current directory. This feature only works if the installed package can be determined and there is an updated package available. If not, the download page is reported to the terminal for manual download.
+The download feature checks what [package](../../installation-details/package-options.md) Duplicati is current installed with, and then obtains the most recent URL for that package and downloads it to the current directory. This feature only works if the installed package can be determined and there is an updated package available. If not, the download page is reported to the terminal for manual download.
 
 ## Environment variables
 

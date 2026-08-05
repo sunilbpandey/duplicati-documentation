@@ -16,7 +16,7 @@ Each command also requires the option `--dbpath=<path to local database>`, but i
 
 Most options have no relationship and can be applied in any order, but some options, mostly the filter options, are order sensitive and must be supplied in the order they are evaluated. The remote url is a url-like representation of the storage destination and options. The [destination overview](../backup-destinations/destination-overview.md) page provides an overview of what is currently supported.
 
-The list of options that are supported is quite extensive and only the most common options are described on this page. For the sensitive options: `--passphrase`, `--auth-username`, and `--auth-password`, these can also be supplied thorugh the matching environment variables: `PASSPHRASE`, `AUTH_USERNAME`, and `AUTH_PASSWORD`. For further safeguarding of these values, see the section on [using the secret provider](../detailed-descriptions/security-and-secrets/using-the-secret-provider/).
+The list of options that are supported is quite extensive and only the most common options are described on this page. For the sensitive options: `--passphrase`, `--auth-username`, and `--auth-password`, these can also be supplied through the matching environment variables: `PASSPHRASE`, `AUTH_USERNAME`, and `AUTH_PASSWORD`. For further safeguarding of these values, see the section on [using the secret provider](../detailed-descriptions/security-and-secrets/using-the-secret-provider/).
 
 All commands support the `--dry-run` parameter that will simulate the operations and provide output, but not actually change any local or remote files.
 
@@ -68,7 +68,7 @@ The most common additional option(s) supplied are the filter options. The filter
 
 When supplying only exclude filters, any file not matching will be included; likewise, if only includes are present, anything else will be included. The order of the arguments define the order the filters are evaluated. Beware that some symbols, such as `*` and `\` needs to be escaped on the commandline, and rules vary based on operating system and terminal application/shell.
 
-If either of the `--keep-time`, `--keep-versions`, or `--retention-policy` options are set, a successfull backup will subsequently invoke the delete and compact operation as needed. This enables a single command to run all required maintenance, but can optionally be invoked as manual steps.
+If either of the `--keep-time`, `--keep-versions`, or `--retention-policy` options are set, a successful backup will subsequently invoke the delete and compact operation as needed. This enables a single command to run all required maintenance, but can optionally be invoked as manual steps.
 
 ## Sync
 
@@ -114,9 +114,9 @@ The restore command in this form will restore the specified file(s) to their ori
 
 To restore to a different location than the original, such as to a staging folder, use the option `--restore-path=<destination>`. The restore will find the shortest common path for the files to restore, and make a minimal folder structure to restore into.
 
-If you are sure you want to restore the files, and potentially loose existing files, use the option `--overwrite`.
+If you are sure you want to restore the files, and potentially lose existing files, use the option `--overwrite`.
 
-The restore command will restore from the latest version of the backup, but other versions can be selected with the `--version=<version>`. As with backups, the `--include` and `--exclude` options can be used to filter down the desired files to restire.
+The restore command will restore from the latest version of the backup, but other versions can be selected with the `--version=<version>`. As with backups, the `--include` and `--exclude` options can be used to filter down the desired files to restore.
 
 ## Find
 
@@ -166,7 +166,7 @@ If the remote files cannot be recovered, but you would like the backup to contin
 duplicati-cli purge-broken-files <remote url> <options>
 ```
 
-After succesfully purging the broken files, the local database and remote storage will be in sync and you can continue backups.
+After successfully purging the broken files, the local database and remote storage will be in sync and you can continue backups.
 
 The related command "purge" can be used to selectively remove files from the backup.
 

@@ -30,13 +30,13 @@ Simply head over to the [Duplicati download page](https://duplicati.com/download
 
 For MacOS the common installation method is to use a DMG file with the application file. Most modern MacOS machines are using the Apple Silicon which is called `Arm64` in Duplicati's packages. If you are on an older Mac that has a 64-bit Intel processor, you can use the `x64` package instead.
 
-Once you know which kind of Mac you have, header over to the  [Duplicati download page](https://duplicati.com/download) and download the relevant DMG file. Open the file and drag Duplicati into the Application folder, and then you can start Duplicati.
+Once you know which kind of Mac you have, head over to the  [Duplicati download page](https://duplicati.com/download) and download the relevant DMG file. Open the file and drag Duplicati into the Application folder, and then you can start Duplicati.
 
 The first time Duplicati starts up, it will open the user interface in your browser. At this point you are ready to [set up a backup](set-up-a-backup-in-the-ui.md).
 
 ## Install Duplicati on Linux
 
-Most Linux distributions work well with Duplicati but there are only packages for Debian based distributions (Ubuntu, Mint, etc) and for RedHat based based distributions (Fedora, SUSE, etc). For other distributions you may need to manually install some dependencies.
+Most Linux distributions work well with Duplicati but there are only packages for Debian based distributions (Ubuntu, Mint, etc) and for RedHat based distributions (Fedora, SUSE, etc). For other distributions you may need to manually install some dependencies.
 
 For Linux distributions there are packages for the most common 64-bit based system with `x64`, support for `Arm64` and the predecessor `Arm7` aka `ArmHF` which are commonly found in NAS boxes and the older Raspberry Pi series.
 
@@ -62,7 +62,7 @@ This will install all dependencies and place Duplicati in the default location o
 
 ### Install on another Linux distribution
 
-For other linux distributions you can use the `.zip` file that matches your system architecture. Inside the zip files are all the binaries that are needed, and you can simply place them in a folder that works for your system. Generally, all dependecies are inlcuded in the packages so unless you are using a very slimmed down setup, it should work without additional packages.
+For other linux distributions you can use the `.zip` file that matches your system architecture. Inside the zip files are all the binaries that are needed, and you can simply place them in a folder that works for your system. Generally, all dependencies are included in the packages so unless you are using a very slimmed down setup, it should work without additional packages.
 
 The first time Duplicati starts up, it will open the user interface in your browser. At this point you are ready to [set up a backup](set-up-a-backup-in-the-ui.md).
 

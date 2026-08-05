@@ -28,7 +28,7 @@ To use Google Cloud Storage you must first obtain an `AuthID` by using a Duplica
 
 ## Using service token
 
-Because the OAuth token has full access to the Google Account, it is recommended that you use  a Google [Service Accounts](https://cloud.google.com/iam/docs/keys-create-delete) instead. Once you have obtained the Service Account JSON, provide it with either `--gcs-service-account-file=/path/to/jsom`  or `--gcs-service-account-json=<urlencoded json>`. If you are using the graphical user interface, you can paste the JSON into the advanced option area:
+Because the OAuth token has full access to the Google Account, it is recommended that you use  a Google [Service Accounts](https://cloud.google.com/iam/docs/keys-create-delete) instead. Once you have obtained the Service Account JSON, provide it with either `--gcs-service-account-file=/path/to/json`  or `--gcs-service-account-json=<urlencoded json>`. If you are using the graphical user interface, you can paste the JSON into the advanced option area:
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-03 at 15.38.19.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-03 at 15.38.26.png" alt="Entering Service Account JSON"></picture><figcaption></figcaption></figure>
 

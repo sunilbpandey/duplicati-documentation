@@ -10,7 +10,7 @@ The WebDAV protocol is a minor extension to the HTTP protocol used for web reque
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-03 at 14.55.28.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-03 at 14.55.21.png" alt="Showing the options needed for configuring the WebDAV connection"></picture><figcaption></figcaption></figure>
 
-To use the WebDAV destination you must enter: server, path on server, username and password. Depneding on your setup, you may also need to add some advanced options as explained below.
+To use the WebDAV destination you must enter: server, path on server, username and password. Depending on your setup, you may also need to add some advanced options as explained below.
 
 ## URL format for Commandline
 

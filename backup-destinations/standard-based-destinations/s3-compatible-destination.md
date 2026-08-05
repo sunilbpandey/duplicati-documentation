@@ -18,13 +18,13 @@ For AWS S3, and most other providers, the bucket name is a global name, shared a
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.38.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2025-11-03 at 14.31.26.png" alt="The S3 Backend Configuration view"></picture><figcaption></figcaption></figure>
 
-To use the S3 backend you must fill in details for all the fields: bucket, folder path, server, AWS Access Key ID, and AWS Secret Access Key. Not that your provider may use different names for the different values, especially the Access Key Id and Secret Access Key may be called something like username and password.
+To use the S3 backend you must fill in details for all the fields: bucket, folder path, server, AWS Access Key ID, and AWS Secret Access Key. Note that your provider may use different names for the different values, especially the Access Key Id and Secret Access Key may be called something like username and password.
 
 With the advanced options you can choose many extra settings as described below.
 
 ## URL format for Commandline
 
-To use S3 as the storage destination, us a format such as:
+To use S3 as the storage destination, use a format such as:
 
 ```
 s3://<bucket name>/<prefix>
@@ -34,7 +34,7 @@ s3://<bucket name>/<prefix>
   &use-ssl=true
 ```
 
-Note that the default for S3 is to use unencrypted connections. The connections are secured with signatures, but all data transfered can be captured through the network. If the provider supports SSL/TLS, which most do, make sure to add `--use-ssl=true`to also encrypt the connection.
+Note that the default for S3 is to use unencrypted connections. The connections are secured with signatures, but all data transferred can be captured through the network. If the provider supports SSL/TLS, which most do, make sure to add `--use-ssl=true`to also encrypt the connection.
 
 Make sure you consult the provider documentation to get the server name you need for the bucket region. If you are using AWS, [see the AWS S3 description](../provider-specific-destinations/amazon-s3-destination.md).
 
@@ -54,7 +54,7 @@ Most providers other than AWS S3 use an older version of the protocol, so to con
 
 Since the bucket defines the place where data is stored, a bucket needs to be created before it can be used. All providers will offer a way to do this through their UI, and allows you to set various options, such as which geographical region the bucket is located in.
 
-If you use Duplicati to create the bucket, you can also set the option `--s3-location-contraint`to provide the desired location. Support for this, and available regions, depends on the provider.
+If you use Duplicati to create the bucket, you can also set the option `--s3-location-constraint`to provide the desired location. Support for this, and available regions, depends on the provider.
 
 ## Storage class
 

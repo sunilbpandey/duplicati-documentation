@@ -6,11 +6,11 @@ description: This page provides an overview of the authentication in Duplicati
 
 To authenticate with Duplicati, the authenticating system needs a password. There are several ways to define that password as described in the section on [Duplicati Access Password](../detailed-descriptions/configuration-and-management/duplicati-access-password.md). There is no username, as Duplicati does not support the concept of different users, so all access is the same.
 
-The password is not stored in plain text, it is repeatedly hashes with a [PBKDF](https://en.wikipedia.org/wiki/PBKDF2) method to ensure it is not readable from the database. This ensures that even an attacker with access to the database will not be able to obtain a password that can be used to log in.
+The password is not stored in plain text, it is repeatedly hashed with a [PBKDF](https://en.wikipedia.org/wiki/PBKDF2) method to ensure it is not readable from the database. This ensures that even an attacker with access to the database will not be able to obtain a password that can be used to log in.
 
 When the password is provided, it is compared to the hashed value that is stored, and only if the password was the same, is the access granted. The access in Duplicati is granted in the form of a long-lived Refresh Token, usually stored as a protected cookie. Since cookie based authentication has a number of weaknesses, the cookie is only used to obtain a short-lived Access Token.
 
-The Access Token is newer persisted, it only lives in the browsers memory to protect it as much as possible from various attacks. If any tool needs access to call Duplicati, it can also request an access token directly with the password, and then call the API methods with the Access Token.
+The Access Token is never persisted, it only lives in the browser's memory to protect it as much as possible from various attacks. If any tool needs access to call Duplicati, it can also request an access token directly with the password, and then call the API methods with the Access Token.
 
 Once the Access Token expires, a new token must be issued. In the browser, this happens transparently when the expiration is detected. For external tools, this re-issue handling must be implemented.
 
@@ -22,6 +22,6 @@ However, it is possible to issue Signin Tokens and Access Tokens, for anyone wit
 
 To avoid leaking the signing keys, it is recommended that the local database is protected by [setting the database field encryption password](../detailed-descriptions/database-and-storage/the-server-database.md).
 
-Also, note that the default installation does not use SSL/TLS encryption for the server communication, but this can be manually configured with a self-issued certicate.
+Also, note that the default installation does not use SSL/TLS encryption for the server communication, but this can be manually configured with a self-issued certificate.
 
 A more detailed description of how the tokens are generated and issued is in the [forum post on the webserver security](https://forum.duplicati.com/t/increasing-security-for-duplicati-s-web-server/18871).

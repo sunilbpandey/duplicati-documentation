@@ -24,7 +24,7 @@ Downgrades are usually not supported automatically because the old version was c
 
 Each update to the data will increment the version number of the database such that when an older version is running it will detect a higher number than it knows and stop there.
 
-When a version upgrades the database, it wil create a backup of the current database before upgrading. You can look for the database and backups in:
+When a version upgrades the database, it will create a backup of the current database before upgrading. You can look for the database and backups in:
 
 * `~/.config/Duplicati` on Linux
 * `~/Library/Application Support/Duplicati` on MacOS

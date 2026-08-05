@@ -6,7 +6,7 @@ description: This page describes the SharpAESCrypt commandline encryption tool
 
 The SharpAESCrypt commandline tool uses the provided AES encryption library but exposes it as a commandline tool.
 
-The SharpAESCryp tool is called `Duplicati.CommandLine.SharpAESCrypt.exe` on Windows and `duplicati-aescrypt` on Linux and MacOS. The library and commandline tool implements the [AESCrypt file format](https://www.aescrypt.com/aes_stream_format.html), so the commandline tool is compatible with any other tool using the [AESCrypt file format](https://www.aescrypt.com/download/).
+The SharpAESCrypt tool is called `Duplicati.CommandLine.SharpAESCrypt.exe` on Windows and `duplicati-aescrypt` on Linux and MacOS. The library and commandline tool implements the [AESCrypt file format](https://www.aescrypt.com/aes_stream_format.html), so the commandline tool is compatible with any other tool using the [AESCrypt file format](https://www.aescrypt.com/download/).
 
 To encrypt a file, use the syntax:
 

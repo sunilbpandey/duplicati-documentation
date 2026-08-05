@@ -41,7 +41,7 @@ If the backup was created with the [store-task-config](#storing-configuration-wi
 Duplicati can automatically store backup configurations together with the backup data. This makes it easier to recreate a backup job when restoring on a new machine or after losing the local Duplicati database.
 
 {% hint style="info" %}
-Avaliable from Canary 2.3.0.104
+Available from Canary 2.3.0.104
 {% endhint %}
 
 The behavior is controlled by the `--store-task-config` advanced option, which supports the following modes:

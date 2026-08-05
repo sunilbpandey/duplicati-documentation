@@ -6,7 +6,7 @@ description: This page describes the Duplicati ServerUtil helper program
 
 The ServerUtil executable is a helper program that can interact with a running Duplicati [Server](../server.md) instance. The main use-case for this program is to allow scripted or programmatic interactions with the server, without resorting to loading the web UI.
 
-The ServerUtil is a replacement for a contributed [duplicati\_client](https://github.com/Pectojin/duplicati-client) script that is no longer maintained. Bot approaches works by accessing the Duplicat server API and issuing the same requests as the user interface would otherwise do.
+The ServerUtil is a replacement for a contributed [duplicati\_client](https://github.com/Pectojin/duplicati-client) script that is no longer maintained. Both approaches work by accessing the Duplicati server API and issuing the same requests as the user interface would otherwise do.
 
 The ServerUtil binaries are called `Duplicati.CommandLine.ServerUtil.exe` on Windows and `duplicati-server-util` on Linux and MacOS.
 
@@ -20,7 +20,7 @@ By default, the ServerUtil will look for the database at the default path for th
 duplicati-server-util login --server-datafolder=<database folder path>
 ```
 
-If the database is encrypted, write protected, or in some other way inacessible, the caller needs to provide both the url and the password on the commandline.
+If the database is encrypted, write protected, or in some other way inaccessible, the caller needs to provide both the url and the password on the commandline.
 
 If the tool is intended to be invoked from a script, it is possible to secure a [refresh token](../../technical-details/server-authentication-model.md) by calling the login command:
 
@@ -44,7 +44,7 @@ To show the backups currently configured, run the `list-backups` command:
 duplicati-server-util list-backups
 ```
 
-Each backup configuration has a name and an ID associated with it. All operations that work on one or more backups will accept either the ID or the name the backup has in the server (case insensitive). Using the ID is prefered as that is stable across backup renames, but the name may be more convenient.
+Each backup configuration has a name and an ID associated with it. All operations that work on one or more backups will accept either the ID or the name the backup has in the server (case insensitive). Using the ID is preferred as that is stable across backup renames, but the name may be more convenient.
 
 Once you know the name or ID of a backup configuration, you can schedule the backup:
 

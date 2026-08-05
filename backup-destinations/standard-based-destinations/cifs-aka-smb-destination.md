@@ -53,11 +53,11 @@ SMB supports two distinct transport protocols, each with its own characteristics
 
 \--[**read-buffer-size**](#user-content-fn-1)[^1]
 
-Defines the read buffer size, in bytes, for SMB operations (Will be capped automatically by SMB negotiated values, values bellow 10000 bytes will be ignored)
+Defines the read buffer size, in bytes, for SMB operations (Will be capped automatically by SMB negotiated values, values below 10000 bytes will be ignored)
 
 \--[**write-buffer-size**](#user-content-fn-1)[^1]
 
-Defines the write buffer size, in bytes, for SMB operations (Will be capped automatically by SMB negotiated values, values bellow 10000 bytes will be ignored)
+Defines the write buffer size, in bytes, for SMB operations (Will be capped automatically by SMB negotiated values, values below 10000 bytes will be ignored)
 
 The SMB backend is available on stable release from version 2.2.
 

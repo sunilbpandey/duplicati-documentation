@@ -66,7 +66,7 @@ Note that this is exclusive with `--disable-db-encryption` and that the server w
 
 ## External access to the server
 
-The server will by default only listen to requests on the local machine., which is done to ensure that requests from the local network cannot access the Duplicati instance. However, any applications that are running on the same machine will be able to send commands to Duplicati. To prevent local privilege escalation attacks, Duplicati requires a [password](../detailed-descriptions/configuration-and-management/duplicati-access-password.md) and a [valid token](../technical-details/server-authentication-model.md) for all requests.
+The server will by default only listen to requests on the local machine, which is done to ensure that requests from the local network cannot access the Duplicati instance. However, any applications that are running on the same machine will be able to send commands to Duplicati. To prevent local privilege escalation attacks, Duplicati requires a [password](../detailed-descriptions/configuration-and-management/duplicati-access-password.md) and a [valid token](../technical-details/server-authentication-model.md) for all requests.
 
 To activate access from the local network, the server must be started with:
 
@@ -205,7 +205,7 @@ If both are supplied, the commandline options are used.
 
 ## Environment variables
 
-For the server options, it is also possible to supply them as environment variables. This makes it easier to toggle options from Docker-like setups where is is desirable to have then entire service config in a single file, and setting commandline arguments may be error prone.
+For the server options, it is also possible to supply them as environment variables. This makes it easier to toggle options from Docker-like setups where it is desirable to have the entire service config in a single file, and setting commandline arguments may be error prone.
 
 Any of the commandline options for the server an be applied by transforming the option name to an environment variable name. The transformation is to upper-case the option, change hyphen, `-`, to underscore, `_`, and prepend `DUPLICATI__`.
 

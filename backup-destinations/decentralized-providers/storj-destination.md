@@ -39,4 +39,4 @@ If the `--storj-satellite` is omitted it will default to a US based endpoint.
 
 ## Bucket and folder
 
-To choose the bucket where data is stored, use the `--storj-bucket` which will default to `duplicati`. If further differentiation is needed, use `--storj-folder` to specifiy a folder within the bucket where data is stored.
+To choose the bucket where data is stored, use the `--storj-bucket` which will default to `duplicati`. If further differentiation is needed, use `--storj-folder` to specify a folder within the bucket where data is stored.

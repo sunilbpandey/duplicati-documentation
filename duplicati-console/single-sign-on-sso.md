@@ -26,7 +26,7 @@ Ensure you have an Okta account available with **super admin rights**.
 
 ### Choose sign-in method and application type
 
-In the daiglog for creating the application, choose these two options:
+In the dialog for creating the application, choose these two options:
 
 * **Sign-in method:** `OIDC - OpenID Connect`
 * **Application type:** `Web Application`

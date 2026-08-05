@@ -30,7 +30,7 @@ By default, the Duplicati TrayIcon will use the operating systems standard metho
 
 ## Detached TrayIcon
 
-In some cases it may be useful to run the server in one process and the TrayIcon in another. For this setup, the TrayIcon can run without a hosted server. To disabled the Server, start the TrayIcon application with the commandline option:
+In some cases it may be useful to run the server in one process and the TrayIcon in another. For this setup, the TrayIcon can run without a hosted server. To disable the Server, start the TrayIcon application with the commandline option:
 
 ```
  --no-hosted-server=true
@@ -42,7 +42,7 @@ This will cause the TrayIcon to connect to a Server that is already running. If 
 --hosturl=<host url>
 ```
 
-It may also be required to provide the password for the server in the detatched setup, as outlined in [Duplicati Access Password](../detailed-descriptions/configuration-and-management/duplicati-access-password.md). An alternative to providing the password is to use the option:
+It may also be required to provide the password for the server in the detached setup, as outlined in [Duplicati Access Password](../detailed-descriptions/configuration-and-management/duplicati-access-password.md). An alternative to providing the password is to use the option:
 
 ```
 --read-config-from-db=true
@@ -50,7 +50,7 @@ It may also be required to provide the password for the server in the detatched 
 
 The TrayIcon will then attempt to extract signing information from the local database, provided that the TrayIcon process also has read access to the database, and that signin tokens are not disabled.
 
-It may be convienient to [use preload settings](../detailed-descriptions/configuration-and-management/preload-settings.md) to provide arguments to both the Server and TrayIcon when running in detached mode.
+It may be convenient to [use preload settings](../detailed-descriptions/configuration-and-management/preload-settings.md) to provide arguments to both the Server and TrayIcon when running in detached mode.
 
 ### Self-signed certificate
 

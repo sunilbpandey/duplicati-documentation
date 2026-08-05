@@ -14,7 +14,7 @@ If you have access to backup configurations, jump to the [section for moving wit
 
 ## Previous machine is still available
 
-If the previous machine is still accessible, you can copy over the contents of the `Duplicati` folder containing the the configuration database `Duplicati-server.sqlite` and the other support database. This approach is by far the fastest as Duplicati has all the information and does not need to check up with the remote storage.
+If the previous machine is still accessible, you can copy over the contents of the `Duplicati` folder containing the configuration database `Duplicati-server.sqlite` and the other support database. This approach is by far the fastest as Duplicati has all the information and does not need to check up with the remote storage.
 
 {% hint style="info" %}
 From version 2.3 the default is to encrypt the configuration database, and you need to decrypt it before copying. If you have disabled database encryption, you can skip the decryption step.
@@ -32,7 +32,7 @@ Make sure Duplicati is stopped before moving in the folder into the same locatio
 
 If you don't have the backup configurations, see the section on [import/export configuration](import-and-export-backup-configurations.md) for a guide on how to create the backup jobs from the configuration files.
 
-With the backup configurations, it is possible to re-create the backup configurations. The flow allows you to modify set setup before saving the configuration, in case some details have changed. Once the backup is re-created, it is required that you run the repair operation to make Duplicati recreate the [local database](../database-and-storage/the-local-database.md) for the backup.
+With the backup configurations, it is possible to re-create the backup configurations. The flow allows you to modify the setup before saving the configuration, in case some details have changed. Once the backup is re-created, it is required that you run the repair operation to make Duplicati recreate the [local database](../database-and-storage/the-local-database.md) for the backup.
 
 Once the local database has been recreated, it is then possible to run the backup as before with no modifications required.
 

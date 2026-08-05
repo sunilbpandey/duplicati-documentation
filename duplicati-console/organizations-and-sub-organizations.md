@@ -12,7 +12,7 @@ Organizations in the Duplicati console are similar to tenants found in other sys
 
 Managed service providers (MSPs) can use organizations and sub-organizations in the Duplicati console to isolate tenants, delegate access, and safely offboard customers. The console enforces depth and licensing limits so MSP operators maintain strong governance while working across multiple customer environments.
 
-The description below is targeted MSPs but can also be applied to larger organizations, where there is a need to isolate different areas, for example geographically or by organizational structures.
+The description below is targeted at MSPs but can also be applied to larger organizations, where there is a need to isolate different areas, for example geographically or by organizational structures.
 
 ### Hierarchy model
 

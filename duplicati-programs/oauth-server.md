@@ -20,7 +20,7 @@ This service is the default as it is the most convenient for most users. To gene
 
 [https://duplicati-oauth-handler.appspot.com](https://duplicati-oauth-handler.appspot.com)
 
-Click the button for your prefered provider, complete the login, and obtain the AuthID, that you can then use on another machine as needed.
+Click the button for your preferred provider, complete the login, and obtain the AuthID, that you can then use on another machine as needed.
 
 If you are using the UI, you can click the `AuthID` label/link to start the process. Once you complete it, the UI will automatically fill in the ID, no interaction required.
 

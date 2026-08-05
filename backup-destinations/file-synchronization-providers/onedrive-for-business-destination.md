@@ -28,7 +28,7 @@ od4b://<folder>/<subfolder>
 
 ## Integrated Authentication (Windows only)
 
-If you are on Windows, it may be possible to use the current user's credentials to authenticate. Support for this is depending on many details and is not avaliable in all cases. To use integrated authentication, use the following URL format:
+If you are on Windows, it may be possible to use the current user's credentials to authenticate. Support for this is depending on many details and is not available in all cases. To use integrated authentication, use the following URL format:
 
 ```
 od4b://<folder>/<subfolder>?integrated-authentication=true

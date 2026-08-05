@@ -39,7 +39,7 @@ Type "365" in the search bar, or scroll down and find "Microsoft 365" in the lis
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2026-05-25 at 11.01.06.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.29.png" alt="" width="375"></picture><figcaption></figcaption></figure>
 
-Fill in the information to setup the configuration. You need a Tenant Id, Client Id and Client Secret for the regular setup:
+Fill in the information to set up the configuration. You need a Tenant Id, Client Id and Client Secret for the regular setup:
 
 <figure><picture><source srcset="../../.gitbook/assets/Screenshot 2026-05-25 at 11.01.13.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Screenshot 2026-05-25 at 11.00.40.png" alt="" width="563"></picture><figcaption></figcaption></figure>
 
@@ -51,7 +51,7 @@ Remember to test the configuration before clicking "Use remote source". You can 
 
 To use the Microsoft 365 backup source you must supply a tenant ID and either a client secret or a certificate. When choosing what to back up, it is possible to filter on types (users, groups, etc), and possible to apply filters to obtain fine-grained exclusion of data.
 
-When making backups of an Microsoft 365 tenant, the advanced option `--store-metadata-content-in-database` must be activated.
+When making backups of a Microsoft 365 tenant, the advanced option `--store-metadata-content-in-database` must be activated.
 
 #### Authentication methods
 
@@ -284,7 +284,7 @@ All OneNote items require delegated permissions
 
 | Limitation            | Description                                         | Impact                                                                    |
 | --------------------- | --------------------------------------------------- | ------------------------------------------------------------------------- |
-| Chat messages restore | Chat messages needs an App whitelisted by Microsoft | Requires an application to Microsoft before chat messages can be restored |
+| Chat messages restore | Chat messages need an App whitelisted by Microsoft | Requires an application to Microsoft before chat messages can be restored |
 | Chat message restore  | Cannot preserve original sender                     | Messages appear from application                                          |
 | Chat hosted content   | Cannot restore inline images                        | Images lost on restore                                                    |
 | Planner plan creation | Plans cannot be created via API                     | Plans must pre-exist                                                      |

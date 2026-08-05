@@ -26,7 +26,7 @@ filejump://<hostname>/<folder>/<subfolder>?api-token=*****
 
 You can get an API key by visiting your [Filejump account settings](https://drive.filejump.com/account-settings).
 
-It is also possible to use a username/password combination, but this is not recommeded as it it does not work with 2FA enabled on the account:
+It is also possible to use a username/password combination, but this is not recommended as it does not work with 2FA enabled on the account:
 
 ```
 filejump://<hostname>/<folder>/<subfolder>?auth-username=email&auth-password=*****

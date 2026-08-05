@@ -16,7 +16,7 @@ Despite all deletion rules, Duplicati will never delete the last version, keepin
 
 The most intuitive option is to choose a period that data is stored, and then to consider everything older than this period as stale data. The actual period depends on the actual use, but it could be 7 days, 1 year or 5 years for example.
 
-This option is usually the prefered choice if the backups happen regularly, such as a backup each day, and then keep the last 3 months.
+This option is usually the preferred choice if the backups happen regularly, such as a backup each day, and then keep the last 3 months.
 
 ## Keep versions
 
@@ -28,7 +28,7 @@ Another special case is that if the source data has not changed at all, which is
 
 The retention policy is a "bucket" based strategy, where you define how many backups to keep in each "bucket" and what a "bucket" covers. With this strategy, it is possible to get something similar to [grandfather-father-son](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son) style backup rotations.
 
-The syntax for the rentention policy uses the [time format](../../technical-details/option-formats.md#timespans-timestamps-and-durations) to define the bucket and contents in that bucket. The bucket size is first, then a colon separator, and then the duration in the bucket. Multiple buckets can be defined with commas. As an example:
+The syntax for the retention policy uses the [time format](../../technical-details/option-formats.md#timespans-timestamps-and-durations) to define the bucket and contents in that bucket. The bucket size is first, then a colon separator, and then the duration in the bucket. Multiple buckets can be defined with commas. As an example:
 
 ```
 7D:U,1Y:1W
@@ -36,7 +36,7 @@ The syntax for the rentention policy uses the [time format](../../technical-deta
 
 The first bucket is defined as being 7 days, and the value `U` means unlimited the number of backups in this bucket. In other words: for the most recent 7 days, keep all backups.
 
-The second bucket is defined as 1 year, keeping a backup for each 1 week, resulting in rougly 52 backups after the first 7 days.
+The second bucket is defined as 1 year, keeping a backup for each 1 week, resulting in roughly 52 backups after the first 7 days.
 
 Any backups outside the buckets are deleted, meaning anything older than a year would be removed.
 

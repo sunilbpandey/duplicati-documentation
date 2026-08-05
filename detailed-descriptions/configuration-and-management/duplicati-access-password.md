@@ -12,7 +12,7 @@ If you are starting Duplicati for the first time, it will ask you to pick a pass
 
 The [TrayIcon](../../duplicati-programs/trayicon.md) process will usually host the [Server](../../duplicati-programs/server.md) that presents the UI. Since the two parts are within the same process they can communicate securely, and this setup enables the TrayIcon to negotiate a short-term signin token with the server, even though it does not know the password.
 
-This mechanism works for most default installations and is secure as long as the desktop is not compromised. This signin process is the reason that the default random password is prefered, because it is not possible to leak the password.
+This mechanism works for most default installations and is secure as long as the desktop is not compromised. This signin process is the reason that the default random password is preferred, because it is not possible to leak the password.
 
 The downside is that you can bookmark the Duplicati page, but you may be asked for a password that you do not know when accessing the page. In this case, re-launching from the TrayIcon will log you in again.
 
@@ -50,7 +50,7 @@ Note that the regular output from `journalctl` is capped in width, so you cannot
 
 For MacOS you can use the [Console app](https://support.apple.com/lt-lt/guide/console/welcome/mac).
 
-Once you have obtained the link, simply click it or paste it into a browser. Note that the sign-in token has a short lifetime to prevent it being used to gain unathorized access from someone who obtains the logs. If the link has expired, simply restart the service or application and a new link will be generated.
+Once you have obtained the link, simply click it or paste it into a browser. Note that the sign-in token has a short lifetime to prevent it being used to gain unauthorized access from someone who obtains the logs. If the link has expired, simply restart the service or application and a new link will be generated.
 
 After a password has been set, the link will no longer be generated.
 
@@ -101,9 +101,9 @@ If the other options are not available, it is possible to restart the [Server](.
 --webservice-password=<new password>
 ```
 
-This will write a hashed ([PBKDF](https://en.wikipedia.org/wiki/PBKDF2)) version of the new password to the database and use this going forward. This process requires restarting the server, but is persisted in the database, so it is only required to start the server once with with the `--webservice-password` option and future starts can be done without the password.
+This will write a hashed ([PBKDF](https://en.wikipedia.org/wiki/PBKDF2)) version of the new password to the database and use this going forward. This process requires restarting the server, but is persisted in the database, so it is only required to start the server once with the `--webservice-password` option and future starts can be done without the password.
 
-Since commandline arguments and environment variables can be viewed through various system tools, it is recommended that the option is not set on every launch. A prefered way to set this would be to stop all running instances, start once with the new password from a commandline terminal, shut down, and then start again normally.
+Since commandline arguments and environment variables can be viewed through various system tools, it is recommended that the option is not set on every launch. A preferred way to set this would be to stop all running instances, start once with the new password from a commandline terminal, shut down, and then start again normally.
 
 The option can also be supplied to the [TrayIcon](../../duplicati-programs/trayicon.md) and [Agent](../../duplicati-programs/agent.md) processes, which will pass it on to their internal instance of the Server.
 

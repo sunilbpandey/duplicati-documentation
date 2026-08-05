@@ -204,7 +204,7 @@ The retention can be set in 5 ways:
 
 Consider the case of Smart Backup Retention. Using Duplicati notation it can be written as '1W:1D,4W:1W,12M:1M'. This results in this behaviour:
 
-**Active files:** Files that exist in the source will continue to be included in at least one backup version. For example, a file that exists in the source but which is 3 years old will still be in at least one backup version, regardless of the rentention policy.
+**Active files:** Files that exist in the source will continue to be included in at least one backup version. For example, a file that exists in the source but which is 3 years old will still be in at least one backup version, regardless of the retention policy.
 
 **Deleted files:** When a file is deleted from the source it will not be included in any new backups. Old backup versions will retain a copy of the deleted file for at least 12 months. After 12 months the last backup version to include it will eventually be removed.
 
