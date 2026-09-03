@@ -34,14 +34,14 @@ If the option "Save immediately" is checked, the backup will be created when cli
 
 When all is configured as desired, click the "Import" button. If you have not checked "Save immediately", the flow will look like it does when [setting up the initial backup](../../getting-started/set-up-a-backup-in-the-ui.md).
 
-If the backup was created with the [store-task-config](#storing-configuration-with-the-backup) option enabled, you can also retrieve the configuration directly from the backup destination when restoring or setting up a new machine.
+If the backup was created with the [store-task-config](import-and-export-backup-configurations.md#storing-configuration-with-the-backup) option enabled, you can also retrieve the configuration directly from the backup destination when restoring or setting up a new machine.
 
 ## Storing configuration with the backup
 
 Duplicati can automatically store backup configurations together with the backup data. This makes it easier to recreate a backup job when restoring on a new machine or after losing the local Duplicati database.
 
 {% hint style="info" %}
-Available from Canary 2.3.0.104
+Avaliable from Duplicati 2.4
 {% endhint %}
 
 The behavior is controlled by the `--store-task-config` advanced option, which supports the following modes:

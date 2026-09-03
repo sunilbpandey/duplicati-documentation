@@ -39,7 +39,7 @@ Duplicati.WindowsService.exe UNINSTALL
 ### Manual installation considerations
 
 {% hint style="danger" %}
-Do not mix using the MSI service installation with manual service installation.&#x20;
+Do not mix using the MSI service installation with manual service installation.
 {% endhint %}
 
 The MSI keeps track of what it has changed on the system, and this might break if you use any of the commands on this page. If you want to manually handle the service, use the MSI without asking it to install the service or handle certificates. When used this way, the MSI is similar to an xcopy-install.
@@ -61,7 +61,7 @@ Duplicati.WindowsService.exe AGENT-UNINSTALL [arguments ...]
 ### Manage TLS (https) certificates
 
 {% hint style="info" %}
-Available from Canary 2.3.0.103
+Avaliable from Duplicati 2.4
 {% endhint %}
 
 The [ConfigureTool](command-line-interface-cli-1/configuretool.md) can be used to install TLS certificates such that Duplicati will use https for the webservice part. But using ConfigureTool with a service can be a bit difficult because it needs to run in the service context and Windows does not provide simple tools for doing this. To remedy this, the `WindowsService.exe` can also be used to create and install the certificates:
@@ -91,7 +91,7 @@ Note that both commands are safe to re-run and will not do anything if the setup
 ### Password management
 
 {% hint style="info" %}
-Available from Canary 2.3.0.103
+Available from Duplicati 2.4
 {% endhint %}
 
 There are multiple ways to get Duplicati to change the access password, but for a Windows Service this requires multiple steps to avoid logging the password. For this reason, the `WindowsService.exe` provides a helper command that allows you to reset the password with a single command:
@@ -111,7 +111,7 @@ The command will prompt you for a new password. If you leave the new password bl
 ### Scripting support
 
 {% hint style="info" %}
-Available from Canary 2.3.0.103
+Available from Duplicati 2.4
 {% endhint %}
 
 To support automated installation setups, the `WindowsService.exe` tool also supports setting an initial password. This is similar to `RESET-PASSWORD` as described above, but will only set the password if a password has not already been set. This avoids having a random unknown password, but avoids updating the password if it has already been set somehow. To avoid leaking the password via the commandline, the initial password must be passed as an environment variable:
@@ -124,10 +124,10 @@ Duplicati.WindowsService.exe SET-INIT-PASSWORD
 {% endcode %}
 
 {% hint style="warning" %}
-The service must be (re-)started after running the SET-INIT-PASSWORD command.&#x20;
+The service must be (re-)started after running the SET-INIT-PASSWORD command.
 {% endhint %}
 
-The command can be executed before installing the service and will be applied once the service starts.&#x20;
+The command can be executed before installing the service and will be applied once the service starts.
 
 The communication works through a registry key that is intentionally locked down to only be accessible by the Administrator and Service accounts. If the key has too wide permissions, the service will refuse to read it and log a warning. If you need to ensure the key has the correct permissions you can use the `LOCK-SERVICE-KEY` command:
 
@@ -137,6 +137,6 @@ Duplicati.WindowsService.exe LOCK-SERVICE-KEY
 ```
 {% endcode %}
 
-Issuing this command will delete the key, then recreate it with the correct permissions. After this, your script can write values to the key if it has sufficient permissions.&#x20;
+Issuing this command will delete the key, then recreate it with the correct permissions. After this, your script can write values to the key if it has sufficient permissions.
 
 All commands that use the service key will automatically recreate the key before applying their own values, so this command is only needed for advanced scripting based installs.

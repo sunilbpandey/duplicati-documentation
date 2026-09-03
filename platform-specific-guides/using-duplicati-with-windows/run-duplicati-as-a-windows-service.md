@@ -6,11 +6,11 @@ description: >-
 
 # Run Duplicati as a Windows Service
 
-{% hint style="warning" %}
-The setup described here was introduced in Canary 2.3.0.104 and is not yet available in a stable release
+{% hint style="info" %}
+The setup described here was introduced in Canary 2.4
 {% endhint %}
 
-On Windows the operating system will lock files while they are in use. While there are advantages to this, it is problematic for a backup system because the files cannot be read by the backup tool either. To get access to locked files you need Administrator privileges, meaning you need to run Duplicati in a special way.&#x20;
+On Windows the operating system will lock files while they are in use. While there are advantages to this, it is problematic for a backup system because the files cannot be read by the backup tool either. To get access to locked files you need Administrator privileges, meaning you need to run Duplicati in a special way.
 
 Once way of running Duplicati with elevated privileges is to run it as a service. The benefit from this is that the backup runs even if no users are logged in to the machine.
 
